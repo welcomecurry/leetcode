@@ -12,7 +12,7 @@ class Solution {
         
         Arrays.sort(nums);
         Set<List<Integer>> set = new HashSet<>();
-        
+                
         for(int i = 0; i < nums.length - 2; i++)
         {
             int j = i + 1;
@@ -36,7 +36,7 @@ class Solution {
                 {
                     j++;
                 }
-            }
+            }            
         }
         
         return new ArrayList<>(set);
