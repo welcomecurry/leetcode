@@ -17,17 +17,15 @@ class Solution {
         //if value is 1, add key to node and progress node
         //return nonDupe.next
         
+        TreeMap<Integer, Integer> map = new TreeMap<>();
         ListNode nonDupe = new ListNode(-1);
         ListNode pointer = nonDupe;
-        
-        TreeMap<Integer, Integer> map = new TreeMap<>();
         
         while(head != null)
         {
             map.put(head.val, map.getOrDefault(head.val, 0) + 1);
             head = head.next;
         }
-        
         
         for(Map.Entry<Integer, Integer> entry : map.entrySet())
         {
