@@ -12,14 +12,13 @@ class Solution {
         
         for(char c : s.toCharArray()) map.put(c, map.getOrDefault(c, 0) + 1);
         
-        maxHeap.addAll(map.keySet()); //add everything from map into heap
+        maxHeap.addAll(map.keySet());
         
         StringBuilder sb = new StringBuilder();
         
         while(!maxHeap.isEmpty())
         {
             char currLetter = maxHeap.poll();
-            
             for(int i = 0; i < map.get(currLetter); i++) sb.append(currLetter);
         }
         
