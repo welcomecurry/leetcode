@@ -17,9 +17,8 @@ class Solution {
         //increment minutes at end of loop
         //if we are left we no fresh oranges return minutes otherwise return -1
         
-        Queue<int[]> queue = new LinkedList<>();
-        
         int freshOranges = 0;
+        Queue<int[]> queue = new LinkedList<>();
         
         for(int i = 0; i < grid.length; i++)
         {
@@ -27,7 +26,7 @@ class Solution {
             {
                 if(grid[i][j] == 2)
                 {
-                    queue.add(new int[] {i , j});
+                    queue.add(new int[] {i, j});
                 }
                 else if(grid[i][j] == 1)
                 {
@@ -38,8 +37,8 @@ class Solution {
         
         if(freshOranges == 0) return 0;
         
+        int minutes = 0;    // left   right   up     down
         int[][] directions = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
-        int minutes = 0;
         
         while(!queue.isEmpty())
         {
@@ -51,14 +50,14 @@ class Solution {
                 
                 for(int[] dir : directions)
                 {
-                    int currRow = currOrange[0] + dir[0];
-                    int currCol = currOrange[1] + dir[1];
+                    int newX = currOrange[0] + dir[0];
+                    int newY = currOrange[1] + dir[1];
                     
-                    if(currRow >= 0 && currCol >= 0 && currRow < grid.length && currCol < grid[0].length && grid[currRow][currCol] == 1) //if we find fresh orange
+                    if(newX >= 0 && newX < grid.length && newY >= 0 && newY < grid[0].length && grid[newX][newY] == 1)
                     {
-                        grid[currRow][currCol] = 2; //set to rotton
-                        queue.add(new int[] {currRow, currCol}); //add to queue
-                        freshOranges--; //decrement fresh oranges
+                        grid[newX][newY] = 2;
+                        queue.add(new int[] { newX, newY });
+                        freshOranges--;
                     }
                 }
             }
