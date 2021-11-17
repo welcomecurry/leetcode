@@ -8,26 +8,26 @@ class Solution {
         //dp of target will be all the unique paths to that point
         //so return dp[m - 1][n - 1]
         
-        int[][] dp = new int[m][n];
+        int[][] paths = new int[m][n];
         
-        for(int i = 0; i < dp[0].length; i++)
+        for(int i = 0; i < paths.length; i++)
         {
-            dp[0][i] = 1;
+            paths[i][0] = 1;
         }
         
-        for(int i = 0; i < dp.length; i++)
+        for(int i = 0; i < paths[0].length; i++)
         {
-            dp[i][0] = 1;
+            paths[0][i] = 1;
         }
         
-        for(int i = 1; i < dp.length; i++)
+        for(int i = 1; i < paths.length; i++)
         {
-            for(int j = 1; j < dp[0].length; j++)
+            for(int j = 1; j < paths[0].length; j++)
             {
-                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+                paths[i][j] = paths[i - 1][j] + paths[i][j - 1];
             }
         }
         
-        return dp[m - 1][n - 1];
+        return paths[m - 1][n - 1];
     }
 }
