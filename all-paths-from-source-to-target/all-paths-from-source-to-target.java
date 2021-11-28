@@ -18,9 +18,9 @@ class Solution {
         
         for(int n : graph[node])
         {
-            path.add(n);
-            dfs(graph, path, output, n);
-            path.remove(path.size() - 1);
+            path.add(n); //make choice
+            dfs(graph, path, output, n); //backtrack
+            path.remove(path.size() - 1); //undo choice
         }
     }
 }
