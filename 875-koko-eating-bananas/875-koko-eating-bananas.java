@@ -25,7 +25,7 @@ class Solution {
             }
         }
         
-        return left;
+        return right;
     }
     
     private int findMax(int[] piles)
