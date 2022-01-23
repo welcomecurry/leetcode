@@ -10,10 +10,7 @@ class Solution {
             min = Math.min(min, num);
         }
         
-        for(int num : nums)
-        {
-            if(min < num && max > num) count++;
-        }
+        for(int num : nums) if(min < num && max > num) count++;
         
         return count;
     }
