@@ -9,20 +9,13 @@ class Solution {
         
         for(int num : nums)
         {
-            if(num > 0)
-            {
-                positive.add(num); 
-            }
-            else
-            {
-                negative.add(num);
-            }
+            (num > 0 ? positive : negative).add(num);
         }
         
         for(int i = 0; i < nums.length / 2; i++)
         {
             output[i * 2] = positive.get(i);
-            output[i * 2 + 1] = negative.get(i);
+            output[(i * 2) + 1] = negative.get(i);
         }
     
         return output;
