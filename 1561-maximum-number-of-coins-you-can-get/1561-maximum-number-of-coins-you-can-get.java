@@ -8,10 +8,7 @@ class Solution {
         
         int myPile = 0;
         
-        for(int i = piles.length / 3; i < piles.length; i += 2)
-        {
-            myPile += piles[i];
-        }
+        for(int i = piles.length / 3; i < piles.length; i += 2) myPile += piles[i];
         
         return myPile;
     }
