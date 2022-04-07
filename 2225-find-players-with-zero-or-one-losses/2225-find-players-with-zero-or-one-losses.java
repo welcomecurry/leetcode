@@ -1,8 +1,8 @@
 class Solution {
     public List<List<Integer>> findWinners(int[][] matches) {
-        //loop through and count losses for each player
-        //loop through again, if the losses map does not contain player, add to non lost
-        //loop through losses map and if the value is 1 append oto lost one
+        //loop through and map losses for each player
+        //loop through matches, if the losses map does not contain player, add to noLost
+        //loop through losses map and if the value is 1 append to oneLost
         
         TreeMap<Integer, Integer> map = new TreeMap<>();
         TreeSet<Integer> noLost = new TreeSet<>();
@@ -24,6 +24,7 @@ class Solution {
             if(entry.getValue() == 1) oneLost.add(entry.getKey());
         }
         
+        //append answer[0]/noLost and answer[1]/oneLost
         output.add(new ArrayList<>(noLost));
         output.add(oneLost);
         
