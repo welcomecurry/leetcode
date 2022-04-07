@@ -7,18 +7,13 @@ class Solution {
         Arrays.sort(matches, (a,b) -> a[1] - b[1]);
         TreeMap<Integer, Integer> map = new TreeMap<>();
         TreeSet<Integer> noLost = new TreeSet<>();
+        
         List<Integer> oneLost = new ArrayList<>();
         List<List<Integer>> output = new ArrayList<>();
         
-        for(int[] match : matches)
-        {
-            map.put(match[1], map.getOrDefault(match[1], 0) + 1);
-        }
+        for(int[] match : matches) map.put(match[1], map.getOrDefault(match[1], 0) + 1);
         
-        for(int[] match : matches)
-        {
-            if(!map.containsKey(match[0])) noLost.add(match[0]);
-        }
+        for(int[] match : matches) if(!map.containsKey(match[0])) noLost.add(match[0]);
         
         for(Map.Entry<Integer, Integer> entry : map.entrySet())
         {
