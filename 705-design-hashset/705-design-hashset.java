@@ -5,7 +5,7 @@ class MyHashSet {
     }
     
     public void add(int key) {
-        map.put(key, map.getOrDefault(key, 0) + 1);
+        map.put(key, 1);
     }
     
     public void remove(int key) {
