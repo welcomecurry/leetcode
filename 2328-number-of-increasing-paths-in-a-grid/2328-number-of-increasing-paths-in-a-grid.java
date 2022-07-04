@@ -19,7 +19,7 @@ class Solution {
     
     private long dfs(int[][] grid, int i, int j) {
         //if visited return visited element
-        //otherwise loop through all directions, if out of bounds or visited continue
+        //otherwise loop through all directions, if out of bounds or not strictly increasing, continue
         //otherwise ans += dfs % mod, set current element to ans and return ans
         
         if(memo[i][j] != 0) return memo[i][j];
