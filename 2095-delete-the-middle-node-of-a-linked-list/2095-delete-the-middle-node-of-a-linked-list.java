@@ -22,12 +22,12 @@ class Solution {
         
         if(length == 1) return head.next;
         
-        int mid = length / 2;
+        int mid = (length / 2) - 1;
         pointer = head;
         
         while(pointer != null && pointer.next != null)
         {
-            if(mid == 1)
+            if(mid == 0)
             {
                 pointer.next = pointer.next.next;
             }
