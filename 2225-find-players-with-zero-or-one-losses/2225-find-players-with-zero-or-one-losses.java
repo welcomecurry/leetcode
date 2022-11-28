@@ -1,6 +1,6 @@
 class Solution {
     public List<List<Integer>> findWinners(int[][] matches) {
-        //loop through and map losses for each player
+        //loop through matches and map losses for each player
         //loop through matches, if the losses map does not contain player, add to noLost
         //loop through losses map and if the value is 1 append to oneLost
         
@@ -14,11 +14,13 @@ class Solution {
             map.put(match[1], map.getOrDefault(match[1], 0) + 1);
         }
         
+        //no losses
         for(int[] match : matches)
         {
             if(!map.containsKey(match[0])) noLost.add(match[0]);
         }
         
+        //one loss
         for(Map.Entry<Integer, Integer> entry : map.entrySet())
         {
             if(entry.getValue() == 1) oneLost.add(entry.getKey());
