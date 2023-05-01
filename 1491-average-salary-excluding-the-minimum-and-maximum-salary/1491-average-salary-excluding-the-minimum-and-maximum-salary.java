@@ -1,18 +1,10 @@
 class Solution {
     public double average(int[] salary) {
-        //minheap, poll off first and loop till size - 1
+        Arrays.sort(salary);
         double avg = 0;
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         
-        for(int sal : salary) minHeap.add(sal);
+        for(int i = 1; i < salary.length - 1; i++) avg += salary[i];
         
-        minHeap.poll(); //remove min
-        
-        int end = minHeap.size();
-        int size = end;
-        
-        while(size-- > 1) avg += minHeap.poll();
-        
-        return avg / (end - 1);
+        return avg / (salary.length - 2);
     }
 }
