@@ -15,10 +15,9 @@
  */
 class Solution {
     public int maxLevelSum(TreeNode root) {
-        PriorityQueue<Integer> levels = new PriorityQueue<>((a,b) -> b - a);
         Queue<TreeNode> queue = new LinkedList<>();
 
-        int max = root.val, currLevel = 1;
+        int max = root.val, currLevel = 1, minLevel = 1;
         queue.add(root);
         
         while(!queue.isEmpty()) {
@@ -39,12 +38,12 @@ class Solution {
             
             if(currSum > max) {
                 max = currSum;
-                levels.add(currLevel);
+                minLevel = currLevel;
             }
             
             currLevel++;
         }
         
-        return !levels.isEmpty() ? levels.poll() : 1;
+        return minLevel;
     }
 }
