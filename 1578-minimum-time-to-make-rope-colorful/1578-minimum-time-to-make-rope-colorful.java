@@ -1,31 +1,25 @@
 class Solution {
     public int minCost(String s, int[] cost) {
-        //create stack
-        //loop through the string
-        //if stack is not empty and stack.peek() == currentChar
-            //deletions += min(cost[i], cost[i - 1])
-            //pop off stack and push current char
-        //otherwise push onto stack
-        //return deletions
-        
-        Stack<Character> stack = new Stack<>();
-        int deletionCost = 0;
-        
-        for(int i = 0; i < s.length(); i++)
-        {
-            if(!stack.isEmpty() && stack.peek() == s.charAt(i))
-            {
-                deletionCost += Math.min(cost[i], cost[i - 1]);
-                cost[i] = Math.max(cost[i], cost[i - 1]);
-                stack.pop();
-                stack.push(s.charAt(i));
+        int ans = 0, n = s.length();
+        for(int l = 0, r = 1; r < n; ){
+            if(s.charAt(l) != s.charAt(r)){
+                l = r; 
+                r++;
+                continue;
             }
-            else
-            {
-                stack.push(s.charAt(i));
+            
+            if(cost[l] <= cost[r]){
+                ans += cost[l];
+                l = r; 
+                r++;
+            }
+            
+            else if(cost[l] > cost[r]){
+                ans += cost[r];
+                r++;
             }
         }
         
-        return deletionCost;
+        return ans;
     }
 }
