@@ -2,7 +2,7 @@ class Solution {
     Integer[][] dp;
     int n;
     
-    public int Helper(int idx, int[] arr, int d){
+    public int helper(int idx, int[] arr, int d){
         
         if(idx == n && d == 0)    return 0;
         if(n - idx < d)           return (int)1e5;         
@@ -15,7 +15,7 @@ class Solution {
         
         for(int i = idx; i < n; ++i){
             max = Math.max(arr[i], max);
-            res = Math.min(res, max + Helper(i + 1, arr, d - 1));
+            res = Math.min(res, max + helper(i + 1, arr, d - 1));
         }
     
         return dp[idx][d] = res;
@@ -27,6 +27,6 @@ class Solution {
 		
         if(n < d)   return -1;
        
-        return Helper(0, jobDifficulty, d);
+        return helper(0, jobDifficulty, d);
     }
 }
