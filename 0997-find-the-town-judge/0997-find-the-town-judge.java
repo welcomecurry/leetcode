@@ -8,14 +8,12 @@ class Solution {
         
         int[] isTrusted = new int[n + 1];
         
-        for(int[] person : trust)
-        {
+        for(int[] person : trust) {
             isTrusted[person[0]]--; //person trusts someone
             isTrusted[person[1]]++; //person is trusted by someone
         }
         
-        for(int i = 1; i < isTrusted.length; i++)
-        {
+        for(int i = 1; i < isTrusted.length; i++) {
             if(isTrusted[i] == n - 1) return i; //n - 1 since everyone trusts town judge except self
         }
         
