@@ -20,18 +20,15 @@ class Solution {
         //if p.val != q.val return false => not the same tree
         //otherwise return isSameTree(left) && isSameTree(right)
         
-        if(p == null && q == null)
-        {
+        if(p == null && q == null) {
             return true;
         }
         
-        if(p == null || q == null)
-        {
+        if(p == null || q == null) {
             return false;
         }
         
-        if(p.val != q.val)
-        {
+        if(p.val != q.val) {
             return false;
         }
         
