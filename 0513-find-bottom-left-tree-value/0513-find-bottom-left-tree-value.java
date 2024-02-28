@@ -29,7 +29,6 @@ class Solution {
                 TreeNode currNode = queue.poll();
                 
                 if(i == 0) { //we are on first element on current level
-                
                     ans = currNode.val;
                 }
                 
