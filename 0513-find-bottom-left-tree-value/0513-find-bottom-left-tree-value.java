@@ -22,16 +22,14 @@ class Solution {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         
-        while(!queue.isEmpty())
-        {
+        while(!queue.isEmpty()) {
             int size = queue.size();
             
-            for(int i = 0; i < size; i++)
-            {
+            for(int i = 0; i < size; i++) {
                 TreeNode currNode = queue.poll();
                 
-                if(i == 0) //we are on first element on current level
-                {
+                if(i == 0) { //we are on first element on current level
+                
                     ans = currNode.val;
                 }
                 
