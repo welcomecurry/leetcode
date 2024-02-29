@@ -31,8 +31,7 @@ class Solution {
         //increment level
         //if we get through whole traversal the tree is even/odd so return true
         
-        if(root.val % 2 == 0)
-        {
+        if(root.val % 2 == 0) {
             return false;
         }
         
@@ -41,17 +40,14 @@ class Solution {
         int bound = 0;
         queue.add(root);
         
-        while(!queue.isEmpty())
-        {
+        while(!queue.isEmpty()) {
             int size = queue.size();
             bound = level % 2 == 0 ? Integer.MIN_VALUE : Integer.MAX_VALUE;
             
-            for(int i = 0; i < size; i++)
-            {
+            for(int i = 0; i < size; i++) {
                 TreeNode currNode = queue.poll();
                 
-                if(level % 2 == 0 && (currNode.val % 2 == 0 || currNode.val <= bound) || level % 2 != 0 && (currNode.val % 2 != 0 || currNode.val >= bound))
-                {
+                if(level % 2 == 0 && (currNode.val % 2 == 0 || currNode.val <= bound) || level % 2 != 0 && (currNode.val % 2 != 0 || currNode.val >= bound)) {
                     return false;
                 }
                 
