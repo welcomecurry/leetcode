@@ -12,10 +12,8 @@ class Solution {
         Arrays.sort(points, (a,b) -> Integer.compare(a[1], b[1]));
         int arrows = 1, endVal = points[0][1];
         
-        for(int[] point : points)
-        {
-            if(point[0] > endVal)
-            {
+        for(int[] point : points) {
+            if(point[0] > endVal) {
                 arrows++;
                 endVal = point[1];
             }
