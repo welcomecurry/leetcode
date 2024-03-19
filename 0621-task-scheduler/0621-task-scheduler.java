@@ -10,17 +10,13 @@ class Solution {
         
         int[] charMap = new int[26];
         
-        for(char c : tasks)
-        {
-            charMap[c - 'A']++;
-        }
+        for(char c : tasks) charMap[c - 'A']++;
         
         Arrays.sort(charMap);
         int maxVal = charMap[25] - 1; //-1 we bc don't have to idle after last task
         int idleSpots = maxVal * n;
         
-        for(int i = 24; i >= 0; i--)
-        {
+        for(int i = 24; i >= 0; i--) {
             idleSpots -= Math.min(maxVal, charMap[i]);
         }
         
