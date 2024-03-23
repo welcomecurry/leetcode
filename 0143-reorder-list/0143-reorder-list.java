@@ -25,8 +25,7 @@ class Solution {
         List<Integer> list = new ArrayList<>();
         ListNode pointer = head;
         
-        while(pointer != null)
-        {
+        while(pointer != null) {
             list.add(pointer.val);
             pointer = pointer.next;
         }
@@ -34,14 +33,11 @@ class Solution {
         int i = 1, left = 1, right = list.size() - 1;
         pointer = head;
         
-        while(i < list.size())
-        {
-            if(i % 2 == 0)
-            {
+        while(i < list.size()) {
+            if(i % 2 == 0) {
                 pointer.next = new ListNode(list.get(left++));         
             }
-            else
-            {
+            else {
                 pointer.next = new ListNode(list.get(right--));
             }
             
