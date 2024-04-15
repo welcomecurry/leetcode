@@ -20,8 +20,7 @@ class Solution {
         return result;
     }
     
-    private void dfs(TreeNode root, int sum)
-    {
+    private void dfs(TreeNode root, int sum) {
         //base check if root is null return
         //sum = sum * 10 + root.val => multiply by 10 to increase decimal place for next num then add next num
         //if left and right childs are null add sum to result since we have reached             root to leaf
