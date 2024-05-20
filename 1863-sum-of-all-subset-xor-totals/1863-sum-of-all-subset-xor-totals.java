@@ -5,12 +5,10 @@ class Solution {
         return totalSum;
     }
     
-    private void dfs(int index, int prevSum, int[] nums)
-    {
+    private void dfs(int index, int prevSum, int[] nums) {
         if(index >= nums.length) return;
         
-        for(int i = index; i < nums.length; i++)
-        {
+        for(int i = index; i < nums.length; i++) {
             int currSum = prevSum ^ nums[i];
             totalSum += currSum;
             dfs(i + 1, currSum, nums);
