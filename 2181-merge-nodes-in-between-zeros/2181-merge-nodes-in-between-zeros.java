@@ -16,14 +16,11 @@ class Solution {
         ListNode output = new ListNode(-1);
         ListNode pointer = output;
         
-        while(head != null)
-        {
-            if(head.val == 0 && head.next != null)
-            {
+        while(head != null) {
+            if(head.val == 0 && head.next != null) {
                 int sum = 0;
                 head = head.next;
-                while(head != null && head.val != 0)
-                {
+                while(head != null && head.val != 0) {
                     sum += head.val;
                     head = head.next;
                 }
@@ -31,8 +28,7 @@ class Solution {
                 pointer.next = new ListNode(sum);
                 pointer = pointer.next;
             }
-            else
-            {
+            else {
                 head = head.next;
             }
         }
