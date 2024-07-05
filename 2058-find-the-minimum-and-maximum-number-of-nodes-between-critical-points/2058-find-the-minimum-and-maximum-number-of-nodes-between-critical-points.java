@@ -18,10 +18,8 @@ class Solution {
         head = head.next;
         List<Integer> list = new ArrayList<>();
         
-        while(head.next != null)
-        {
-            if((head.val < prev.val && head.val < head.next.val) || (head.val > prev.val && head.val > head.next.val))
-            {
+        while(head.next != null) {
+            if((head.val < prev.val && head.val < head.next.val) || (head.val > prev.val && head.val > head.next.val)) {
                 list.add(index);
             }
             prev = head;
@@ -33,8 +31,7 @@ class Solution {
         
         int min = Integer.MAX_VALUE;
         
-        for(int i = 1; i < list.size(); i++)
-        {
+        for(int i = 1; i < list.size(); i++) {
             min = Math.min(min, list.get(i) - list.get(i - 1));
         }
         
